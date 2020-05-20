@@ -16,7 +16,10 @@ This is a React exercise where we'll use the Github API to fetch repositories th
 
 ### Setup
 
-After cloning this repositor, run `yarn start` to start up the app.
+After cloning this repository:
+
+- Run `yarn install` to install dependencies
+- Run `yarn start` to start up the app
 
 ### Github API
 
