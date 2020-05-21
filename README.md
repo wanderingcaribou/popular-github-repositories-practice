@@ -8,10 +8,10 @@ This is a React exercise where we'll use the Github API to fetch repositories th
 
 ### User stories
 
-- As a user, I want to see the names of all repos with over 25k stars, sorted by most to least stars
-- As a user, I want to know when the data is loading
-- As a user, I want to know when there is an error
-- As a user, I want to be able to specify the star count that determines which which repos to show
+- As a user, I want to see the name and stars-count of all Github repositories above 25k stars
+- As a user, I want some indication when the data is loading/being-fetched
+- As a user, I want some indication when there is an error fetching data
+- As a user, I want to be able to specify the stars-count that determines which which repos to display
 - As a user, I want to click on one of the rows and be taken to a new "page" that shows:
 - - repo name
 - - stars count
