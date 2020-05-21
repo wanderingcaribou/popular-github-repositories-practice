@@ -8,11 +8,19 @@ This is a React exercise where we'll use the Github API to fetch repositories th
 
 ### User stories
 
-- As a user, I want to see all repos with over 25k stars, sorted by most to least stars
-- As a user, I want to see the repo name, number of stars, and a link to the repo
+- As a user, I want to see the names of all repos with over 25k stars, sorted by most to least stars
 - As a user, I want to know when the data is loading
 - As a user, I want to know when there is an error
 - As a user, I want to be able to specify the star count that determines which which repos to show
+- As a user, I want to click on one of the rows and be taken to a new "page" that shows:
+- - repo name
+- - stars count
+- - open_issues_count
+- - forks count
+- - a link to the repository
+- As a user, I want a "Back" button to return to the list of repos
+- As a user, I want results to be paginated with 5 repos on each page
+- As a user, I want everything to be styled and look good
 
 ### Setup
 
