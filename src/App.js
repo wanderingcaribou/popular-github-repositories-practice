@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import StarsCountInput from './StarCountInput';
+import RepoList from './RepoList';
+import Repo from './Repo';
 
 // I want to see all repos with over 25k stars, sorted by most to least stars
 // I want to see the repo name, number of stars, and a link to the repo
@@ -30,50 +33,20 @@ import './App.css';
 //  - html_url
 //  - id
 //
-function getGithubRepos() {
-  return fetch(
-    'https://api.github.com/search/repositories?q=stars:%3E25000&sort=stars&order=desc'
-  ).then((data) => data.json());
-}
-
 function App() {
   const [repoList, setRepoList] = useState([]);
-
-  useEffect(() => {
-    getGithubRepos()
-      .then((results) =>
-        results.items.map(({ id, full_name, stargazers_count, html_url }) => {
-          return { id, full_name, stargazers_count, html_url };
-        })
-      )
-      .then((repoList) => setRepoList(repoList));
-  }, []);
+  const [fetching, setFetching] = useState(false);
+  const [selectedRepo, setSelectedRepo] = useState(null);
 
   return (
     <div className="App">
-      {repoList === null ? (
-        <span>Loading</span>
+      <StarsCountInput setRepoList={setRepoList} setFetching={setFetching} />
+      {fetching && <div>Loading</div>}
+
+      {selectedRepo ? (
+        <Repo selectedRepo={selectedRepo} setSelectedRepo={setSelectedRepo} />
       ) : (
-        <table>
-          <tbody>
-            <tr>
-              <th>Full Name</th>
-              <th>Number of Stars</th>
-              <th>Link</th>
-            </tr>
-            {repoList.map((repo) => {
-              return (
-                <tr key={repo.id}>
-                  <td>{repo.fullName}</td>
-                  <td>{repo.stargazers_count}</td>
-                  <td>
-                    <a href={repo.html_url}>{repo.html_url}</a>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <RepoList repoList={repoList} setSelectedRepo={setSelectedRepo} />
       )}
     </div>
   );
