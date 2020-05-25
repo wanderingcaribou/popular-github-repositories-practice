@@ -3,7 +3,9 @@ import React from 'react';
 export default function Repo({ selectedRepo, setSelectedRepo }) {
   return (
     <>
-      <span onClick={() => setSelectedRepo(null)}>&lt; Back</span>
+      <span onClick={() => setSelectedRepo(null)} style={{ cursor: 'pointer' }}>
+        &lt; Back
+      </span>
 
       <ul>
         <li>Name: {selectedRepo.full_name}</li>

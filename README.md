@@ -33,4 +33,4 @@ After cloning this repository:
 
 We'll be using the following Github endpoint in our code [as documented here](https://developer.github.com/v3/search/#search-repositories):
 
-https://api.github.com/search/repositories?q=stars:%3E25000&sort=stars&order=desc
+https://api.github.com/search/repositories?q=stars:>25000&sort=stars&order=desc

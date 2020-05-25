@@ -7,7 +7,7 @@ function getGithubRepos(starCount = 10000) {
 }
 
 export default function StarCountInput({ setRepoList, setFetching }) {
-  const [starCountThreshold, setStarCountThreshold] = useState('');
+  const [starCountThreshold, setStarCountThreshold] = useState(0);
 
   return (
     <div style={{ textAlign: 'left', marginBottom: 20 }}>
