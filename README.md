@@ -20,6 +20,7 @@ This is a React exercise where we'll use the Github API to fetch repositories th
 - - a link to the repository
 - As a user, I want a "Back" button to return to the list of repos
 - As a user, I want results to be paginated with 5 repos on each page
+- As a developer, I want to use API V4 (graphql) in my solution
 - As a user, I want everything to be styled and look good
 
 ### Setup
